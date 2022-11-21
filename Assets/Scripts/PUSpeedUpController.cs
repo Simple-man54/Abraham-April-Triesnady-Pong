@@ -5,7 +5,7 @@ using UnityEngine;
 public class PUSpeedUpController : MonoBehaviour
 {
     public PowerUpManager2 manager;
-    public Collider2D ball; 
+    public Collider2D ball;
     public float magnitude;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,8 +13,11 @@ public class PUSpeedUpController : MonoBehaviour
         if (collision == ball)
         {
             ball.GetComponent<BallController>().ActivatePUSpeedUp(magnitude);
-            manager.RemovePowerUp(gameObject);
+            manager.RemovePowerUp(gameObject); 
         }
+    
     }
+
+
    
 }

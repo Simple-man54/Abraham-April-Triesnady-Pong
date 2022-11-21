@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public KeyCode upKey;
     public KeyCode downKey;
     private Rigidbody2D rig;
+    public GameObject Padlekiri;
+    public GameObject Padlekanan;
+ 
+
 
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
@@ -23,6 +28,7 @@ public class PaddleController : MonoBehaviour
         MoveObject(movement);
 
     }
+
 
 
     private Vector2 GetInput()
@@ -45,5 +51,17 @@ public class PaddleController : MonoBehaviour
         Debug.Log("TEST: " + movement);
         rig.velocity = movement;
     }
+
+    public void ActivatePaddleSize(float magnitude)
+    {
+       
+        Padlekiri.transform.localScale = new Vector2(0.3162f, 1.7782f * magnitude);
+        Padlekanan.transform.localScale = new Vector2(0.3162f, 1.7782f * magnitude);
+    }
+    public void ActivatePaddleSpeed(float magnitude)
+    {
+        speed *= magnitude;
+    }
+
 }
 

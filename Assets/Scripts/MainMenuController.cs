@@ -14,4 +14,10 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Created by Abraham April Triesnady");
     }
+  
+    public void Credit()
+    {
+        Debug.Log("Nama lengkap  : Abraham April Triesdnady");
+        Debug.Log("https://github.com/Simple-man54?tab=repositories");
+    }
 }
